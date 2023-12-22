@@ -1,0 +1,40 @@
+.form1, .form2 {
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 20px;
+    padding-top: 10px;
+    width: 450px;
+    font-family: Verdana, Tahoma, sans-serif;
+    margin-bottom: 30px;
+}
+#word, #name, #rating {
+    width: 200px;
+    height: 26px;
+    font-size: 15px;
+    border: 1px solid #575757;
+    border-radius: 5px;
+}
+#btn {
+    height: 30px;
+    font-size: 15px;
+    background-color: rgb(255, 139, 139);
+    border: 2px solid #bd5f5f;
+    border-radius: 5px;
+}
+
+table {
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #565656;
+    text-align: left;
+    padding: 10px;
+}
+#button {
+    height: 30px;
+    width: 150px;
+    font-size: 15px; 
+    background-color: burlywood;
+    border: 2px solid #af9067;
+    border-radius: 5px; 
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Циклы</title>
+</head>
+<body>
+<select id="select"></select>
+<script>
+  // Создаем массив элементов для списка
+  var dni = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+
+  var spisok = document.getElementById("select");
+  
+
+  // Добавляем элементы из массива в выпадающий список
+  var i=0;
+  do{
+    var option = document.createElement("option");
+  
+    option.text = dni[i];
+    spisok.add(option);
+    i++;
+  }
+  while(i < dni.length);
+
+</script>
+
+</body>
+</html>

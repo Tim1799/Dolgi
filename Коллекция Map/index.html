@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Переводчик</title>
+</head>
+<body>
+    <!-- Task 1 -->
+    <form class="form1">
+        <h1>Переводчик</h1>
+        <input type="text" id="word" placeholder="Введите слово">
+        <input type="button" id="btn" onclick="findTranslatе()" value="Перевести">
+        <p id="result"></p>
+    </form>
+
+
+    <!-- Task 2 -->
+    <form class="form2">
+        <h1>Учет оценок студентов</h1>
+        <input type="text" id="name" placeholder="Фамилия студента">
+        <input type="number" id="rating" placeholder="Оценка">
+        <br><br>
+        <input type="button" id="button" onclick="addRating()" value="Добавить оценку">
+        <br><br>
+        <table id="ratingsTable">
+            <tr>
+            <th>Фамилия</th>
+            <th>Средний балл</th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

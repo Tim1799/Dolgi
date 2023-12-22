@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    #field {
+      width: 200px;
+      height: 150px;
+      border: 10px solid black;
+      background-color: #00FF00;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body style="height:2000px">
+
+  Нажмите на поле для перемещения мяча.
+  <br> Мяч не должен выходить за границы поля.
+
+
+  <div id="field" onclick="moveBall(event)">
+    <img src="https://ru.js.cx/clipart/ball.svg" id="ball"> 
+  </div>
+  <script>
+    function moveBall(event) {
+      var ball = document.getElementById('ball');
+      var fieldRect = document.getElementById('field').getBoundingClientRect();
+      var fieldWidth = fieldRect.width;
+      var fieldHeight = fieldRect.height;
+
+      var ballHalfWidth = ball.offsetWidth / 2;
+      var ballHalfHeight = ball.offsetHeight / 2;
+      var mouseX = event.clientX - fieldRect.left;
+      var mouseY = event.clientY - fieldRect.top;
+
+      var newX = mouseX - ballHalfWidth;
+      var newY = mouseY - ballHalfHeight;
+
+      if (newX < 0) {
+        newX = 0;
+      } else if (newX > fieldWidth - ball.offsetWidth) {
+        newX = fieldWidth - ball.offsetWidth;
+      }
+
+      if (newY < 0) {
+        newY = 0;
+      } else if (newY > fieldHeight - ball.offsetHeight) {
+        newY = fieldHeight - ball.offsetHeight;
+      }
+
+      ball.style.transform = 'translate(' + newX + 'px, ' + newY + 'px)';
+    }
+  </script>
+
+</body>
+</html>

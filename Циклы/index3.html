@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Циклы</title>
+</head>
+<body>
+
+<script>
+  // Массив данных о страницах
+  var stranitsa = [
+    { title: "Главная", url: "index.html" },
+    { title: "О нас", url: "index2.html" },
+  ];
+
+  // Создаем динамическое меню навигации
+  var nav = document.createElement("nav");
+  var ul = document.createElement("ul");
+  for (var i = 0; i < stranitsa.length; i++) {
+    var li = document.createElement("li");
+    var a = document.createElement("a");
+    a.setAttribute("href", stranitsa[i].url);
+    a.appendChild(document.createTextNode(stranitsa[i].title));
+    li.appendChild(a);
+    ul.appendChild(li);
+  }
+  nav.appendChild(ul);
+  document.body.appendChild(nav);
+</script>
+<style>
+    
+</style>
+</body>
+</html>

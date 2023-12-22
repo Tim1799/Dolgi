@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <p onmouseover="color(this)">Задание 1</p>
+    <p onclick="size(this)">Задание 2</p>
+    <p>Задание 3</p>
+    <img id="im" onclick="img()" src="" />
+    <p>Задание 4</p>
+    <p id="text" onclick="zamena()">какой-то текст</p>
+    <p>Задание 5</p>
+    <img
+      src=""
+      id="img1"
+      onmouseover="blize(this)"
+      onmouseout="dalshe(this)"
+    />
+    <script>
+      function color(element) {
+        element.style.color = "red";
+      }
+
+      function size(element) {
+        element.style.fontSize = "20pt";
+      }
+
+      function img() {
+        document.getElementById("im").src = "ogon.jpg";
+      }
+
+      function zamena() {
+        document.getElementById("text").innerHTML = '<img src="ogon.jpg">';
+      }
+
+      function blize(img) {
+        img.style.width = "200px";
+      }
+      function dalshe(img) {
+        img.style.width = "100px";
+      }
+    </script>
+
+    <p>Доп задание</p>
+    <p>Задание 1</p>
+    <style>
+      th,
+      td {
+        border: 1px black solid;
+      }
+    </style>
+    <table id="table">
+      <tr>
+        <th>Имя</th>
+        <th>Фамилия</th>
+      </tr>
+      <tr onclick="edit(this)">
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <form>
+      <input type="button" value="добавить пользователя" onclick="add()" />
+    </form>
+    <script>
+      function edit(cell) {
+        var text = prompt("Редактировать:", cell.innerHTML);
+        if (text !== null) {
+          cell.innerHTML = text;
+        }
+      }
+      function add() {
+        var table = document.getElementById("table");
+        var name = prompt("Введите имя:", cell.innerHTML);
+        var surname = prompt("Введите фамилию:", cell.innerHTML);
+      }
+    </script>
+
+    <p>Задание 2</p>
+    <ul>
+      <li onmouseover="opisanie('Клубника', 'Это ягода')">Клубника</li>
+      <li onmouseover="opisanie('Малина', 'Это тоже ягода')">Малина</li>
+      <li onmouseover="opisanie('Арбуз', 'И это тоже ягода')">Абуз</li>
+    </ul>
+    <textarea id="opisan" cols="30" rows="10"></textarea>
+
+    <script>
+      function opisanie(name, opisan) {
+        document.getElementById("opisan").value = opisan;
+      }
+    </script>
+  </body>
+</html>

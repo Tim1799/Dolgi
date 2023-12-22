@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Задание 1</title>
+</head>
+<body>
+    <div style="display: flex; justify-content: center;">
+    <div class="f" style="width: 270px;height: 390px; display: flex; justify-content: center;">
+        <form onsubmit="return verificare()">
+            <h2 style="text-align: center;">Регистрация</h2>
+            <label>Имя пользователя:<br>
+            <input type="text" name="text" id="name" placeholder="от 1 до 20 латинских букв">
+            <br>
+            <span id="namee" class="err"></span>
+            </label><br><br>
+            <label>Email:<br>
+            <input type="email" id="email" name="email">
+            <br>
+            <span id="emaill" class="err"></span>
+            </label><br><br>
+            <label>Пароль:<br>
+            <input type="password" id="pass">
+            <br>
+            <span id="passwordd" class="err"></span>
+            </label><br><br>
+            <input type="submit" value="Зарегистрироваться">
+        </form>
+    </div>
+    </div>
+</body>
+<style>
+
+    .f{
+        text-align: center;
+        background-color: white;
+        border-radius: 15px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        align-items: center;
+    }
+    form{
+        text-align: center;
+    }
+    div{
+        margin: 30px;
+    }
+    input{
+        padding: 7px;
+        border:1px solid lightgray;
+    }
+</style>
+<script>
+    function verificare(){
+    var a = 0;
+    var name,email,password;
+    var nameShablon,emailShablon,PasswordShablon;
+    document.getElementById("namee").innerHTML = "";
+    name = document.getElementById("name").value;
+    nameShablon = /^[A-za-z]{1,20}$/;
+    if(!(name.match(nameShablon))){
+        document.getElementById("namee").innerHTML = "Имя должно содержать от 1 до 20 латинских букв";
+        a++;
+    }
+
+    document.getElementById("emaill").innerHTML = "";
+    email = document.getElementById("email").value;
+    emailShablon = /^[^\b@]+@[^\b@]+\.[^\b@]+$/;
+    if(!(email.match(emailShablon))){
+        document.getElementById("emaill").innerHTML = "Некорректный email";
+        a++;
+    }
+
+    document.getElementById("passwordd").innerHTML = "";
+    password = document.getElementById("pass").value;
+    PasswordShablon = /^.{8,}$/;
+    if(!(password.match(PasswordShablon))) {
+        document.getElementById("passwordd").innerHTML = "Пароль должен содержать не менее 8 символов";
+        a++;
+    }
+    return(a==0);
+}
+</script>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <h4>Задание 1</h4>
+        <ul id="spisok">
+          <li>один</li>
+          <li>два</li>
+          <li>три</li>
+        </ul>
+      
+        <button id="addBtn">Добавить пункт</button>
+      
+        <script>
+          document.getElementById('spisok').addEventListener('click', function(event) {
+            if (event.target.tagName === 'LI') {
+              alert(event.target.textContent);
+            }
+          });
+      
+          document.getElementById('addBtn').addEventListener('click', function() {
+            var newElem = document.createElement('li');
+            newElem.textContent = 'Пункт';
+            document.getElementById('spisok').appendChild(newElem);
+          });
+        </script>
+
+        <h4>Задание 2</h4>
+        <ul id="tree">
+            <li>
+              <span class="toggle">Раздел 1</span>
+              <ul>
+                <li>Подраздел 1.1</li>
+                <li>Подраздел 1.2</li>
+              </ul>
+            </li>
+            <li>
+              <span class="toggle">Раздел 2</span>
+              <ul>
+                <li>Подраздел 2.1</li>
+                <li>Подраздел 2.2</li>
+              </ul>
+            </li>
+          </ul>
+        
+          <script>
+            document.getElementById('tree').addEventListener('click', function(event) {
+              if (event.target.classList.contains('toggle')) {
+                var children = event.target.nextElementSibling;
+                if (children.style.display === 'none' || children.style.display === '') {
+                  children.style.display = 'block';
+                } else {
+                  children.style.display = 'none';
+                }
+              }
+            });
+          </script>
+          <h4>задание 3</h4>
+          <table id="table">
+            <tr>
+              <th>Имя</th>
+              <th>Фамилия</th>
+              <th>Удалить</th>
+            </tr>
+          </table>
+          <div>
+            <input id="nameInput" type="text" placeholder="Введите имя">
+            <input id="surnameInput" type="text" placeholder="Введите фамилию">
+            <button onclick="addRow()">Добавить</button>
+          </div>
+        
+          <script>
+            function addRow() {
+              var name = document.getElementById('nameInput').value;
+              var surname = document.getElementById('surnameInput').value;
+              var table = document.getElementById('table');
+              var row = table.insertRow(-1);
+              var cell1 = row.insertCell(0);
+              var cell2 = row.insertCell(1);
+              var cell3 = row.insertCell(2);
+              cell1.innerHTML = '<div onclick="editCell(this)">' + name + '</div>';
+              cell2.innerHTML = '<div onclick="editCell(this)">' + surname + '</div>';
+              cell3.innerHTML = '<button onclick="deleteRow(this)">Удалить</button>';
+            }
+        
+            function deleteRow(btn) {
+              var row = btn.parentNode.parentNode;
+              row.parentNode.removeChild(row);
+            }
+        
+            function editCell(cell) {
+              var value = cell.innerHTML;
+              cell.innerHTML = '<input type="text" value="' + value + '" onkeypress="updateCell(event, this, \'' + value + '\')">';
+        
+              cell.querySelector('input').focus();
+            }
+        
+            function updateCell(event, input, originalValue) {
+              if (event.key === 'Enter') {
+                var newValue = input.value;
+                if (newValue !== originalValue) {
+                  input.parentNode.innerHTML = newValue;
+                } else {
+                  input.parentNode.innerHTML = originalValue;
+                }
+              }
+            }
+          </script>
+</body>
+</html>

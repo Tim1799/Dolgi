@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>браузерные события</h3>
+    <h4>Задание 1</h4>
+      <button onclick="resText()">Нажмите чтобы спрятать текст</button>
+      <div id="text">
+        <p>текст</p>
+      </div>
+      <script>
+        function resText() {
+          var textDiv = document.getElementById("text");
+          textDiv.style.display = "none";
+        }
+      </script>
+
+
+<h4>Задание 2</h4>
+<button onclick="hideButton(this)">Нажмите чтобы спрятать</button>
+
+  <script>
+    function hideButton(button) {
+      button.style.display = 'none';
+    }
+  </script>
+
+
+<h4>Задание 3</h4>
+
+
+<h4>Задание 4</h4>
+<div class="message">
+    <button class="close-button" onclick="closeMessage(this)">[x]</button><br>
+    <span>•	PHP создавался специально для ведения web-разработок и код на нем может внедряться непосредственно в HTML-код. Синтаксис языка берет начало из C, Java и Perl, и является легким для изучения.</span>
+    
+  </div>
+  <div class="message">
+    <button class="close-button" onclick="closeMessage(this)">[x]</button><br>
+    <span>•	Синтаксис ядра Python минималистичен. Код в Python организовывается в функции и классы, которые могут объединяться в модули.</span>
+   
+  </div>
+  <div class="message">
+    <button class="close-button" onclick="closeMessage(this)">[x]</button><br>
+    <span>•	C# относится к семье языков с C-подобным синтаксисом, из них его синтаксис наиболее близок к C++ и Java.  Язык имеет статическую типизацию, поддерживает полиморфизм, перегрузку операторов, делегаты, атрибуты, события, свойства, обобщённые типы и методы, итераторы, анонимные функции с поддержкой замыканий, LINQ, исключения, комментарии в формате XML.</span>
+   
+  </div>
+
+  <script>
+    function closeMessage(button) {
+      var message = button.parentNode;
+      message.style.display = "none";
+    }
+    </script>
+</body>
+</html>

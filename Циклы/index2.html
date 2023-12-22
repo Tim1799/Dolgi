@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Циклы</title>
+</head>
+<body>
+
+<script>
+  // Массив данных о пользователях
+  var users = [
+    { name: "User1", email: "User1@gmail.com", gender: "М", age: 100, city: "Essentyki" },
+    { name: "User2", email: "User2@gmail.com", gender: "Ж", age: 18, city: "Makeevka" },
+    { name: "User3", email: "User3@gmail.com", gender: "М", age: 19, city: "Moscow" }
+  ];
+
+  // Создаем таблицу
+  var table = document.createElement("table");
+  document.body.appendChild(table);
+
+  // Создаем заголовок таблицы
+  var thead = document.createElement("thead");
+  var headerRow = document.createElement("tr");
+  for (var key in users[0]) {
+    var headerCell = document.createElement("th");
+    headerCell.appendChild(document.createTextNode(key));
+    headerRow.appendChild(headerCell);
+  }
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+  // Создаем строки и столбцы таблицы с данными из массива
+  var tbody = document.createElement("tbody");
+  for (var i = 0; i < users.length; i++) {
+    var row = document.createElement("tr");
+    for (var key in users[i]) {
+      var cell = document.createElement("td");
+      cell.appendChild(document.createTextNode(users[i][key]));
+      row.appendChild(cell);
+    }
+    tbody.appendChild(row);
+  }
+  table.appendChild(tbody);
+</script>
+<style>
+    tr{
+        padding: 5px;
+        text-align: center;
+        border: 1px solid black;
+        margin: 5px;
+    }
+    td{
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid black;
+        text-align: center;
+    }
+    table{
+        border: 1px solid black;
+    }
+</style>
+</body>
+</html>

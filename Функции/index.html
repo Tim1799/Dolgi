@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Function</title>
+</head>
+<body>
+    <!-- Task 1 (анонимная функция) -->
+    <div class="div">
+        <span><b>Задача 1</b></span><br><br>
+        Введите число: <input type="text" name="numb" id="numb"><br><br>
+        <input onclick="square()" type="submit" value="Получить квадрат числа"><br><br>
+        Результат: <input type="text" name="res" id="res">
+    </div>
+
+    <!-- Task 2 (стрелочная функция) -->
+    <div class="div">
+        <span><b>Задача 2</b></span><br><br>
+        Введите 1 число: <input type="text" name="numb1" id="numb1"><br><br>
+        Введите 2 число: <input type="text" name="numb2" id="numb2"><br><br>
+        <input onclick="sum()" type="submit" value="Получить сумму чисел"><br><br>
+        Результат: <input type="text" name="res1" id="res1">
+    </div>
+
+    <!-- Task 3 (стрелочная функция) -->
+    <div class="div">
+        <span><b>Задача 3</b></span><br><br>
+        Введите 1 число: <input type="text" name="num1" id="num1"><br><br>
+        Введите 2 число: <input type="text" name="num2" id="num2"><br><br>
+        Введите 3 число: <input type="text" name="num3" id="num3"><br><br>
+        <input onclick="divide()" type="submit" value="Вычислить"><br><br>
+        Результат разности 1 и 2: <input type="text" name="res2" id="res2"><br><br>
+        Результат частного: <input type="text" name="res22" id="res22">
+    </div>
+
+    <!-- Task 4 -->
+    <div  class="div">
+        <span><b>Задача 4</b></span><br><br>
+        Введите число от 1 до 7: <input type="text" name="numDay" id="numDay"><br><br>
+        <input type="submit" onclick="dayOfWeek()" id="subDay" value="Получить день недели"><br><br>
+        Результат: <input type="text" name="resDay" id="resDay">
+    </div>
+
+    <!-- Task 5 (анонимная функция) -->
+    <div class="div">
+        <span><b>Задача 5</b></span><br><br>
+        Введите число: <input type="text" name="number" id="number"><br><br>
+        <span>Проверьте, больше ли нуля и меньше ли 10-ти введенное число. </span><br><br>      
+        <input type="submit" onclick="checkNumber()" value="Проверить"><br><br> 
+        Результат: <input type="text" name="output" id="output">
+    </div>
+
+    <!-- Task 6 (анонимная функция) -->
+    <div class="div">
+        <span><b>Задача 6</b></span><br><br>
+        <span>Дан массив с числами: [3, 7, 11, -2, 8, 5, 0].</span><br><br>
+        <span>Получите новый массив, в котором все элементы будут больше нуля и меньше 10-ти.</span><br><br>
+        <input type="submit" onclick="filteredNumbers()" value="Получить новый массив"><br><br> 
+        Результат: <input type="text" name="result" id="result">
+    </div>
+
+    <!-- Task 7 -->
+    <div class="div">
+        <span><b>Задача 7</b></span><br><br>
+        Введите число: <input type="text" name="number7" id="number7"><br><br>
+        <input type="submit" onclick="calculateSum()" value="Получить сумму цифр числа"><br><br>
+        Результат: <input type="text" name="result7" id="result7">
+    </div>
+    
+    <!-- Task 8 -->
+    <div class="div">
+        <span><b>Задача 8</b></span><br><br>
+        Введите год от 1 до 2019: <input type="text" name="number8" id="number8"><br><br>
+        <span>Проверьте, получиться ли число 13, если сложить цифры введенного числа.</span><br><br> 
+        <input type="submit" onclick="yearSum()" value="Проверить"><br><br>
+        Результат: <input type="text" name="result8" id="result8">
+    </div>
+
+     <!-- Task 9 -->
+     <div class="div">
+        <span><b>Задача 9</b></span><br><br>
+        Введите число: <input type="text" name="number9" id="number9"><br><br>
+        <span>Проверьте, является ли введенное число четным.</span><br><br> 
+        <input type="submit" onclick="isEvenNum()" value="Проверить"><br><br>
+        Результат: <input type="text" name="result9" id="result9">
+    </div>
+
+    <!-- Task 10 -->
+    <div class="div">
+        <span><b>Задача 10</b></span><br><br>
+        <span>Дан массив с числами: [3, 8, 15, 10, 6, 5, 2].</span><br><br>
+        <span>Получите новый массив, в котором все элементы будут четными.</span><br><br> 
+        <input type="submit" onclick="arrayEvenNum()" value="Получить новый массив"><br><br>
+        Результат: <input type="text" name="result10" id="result10">
+    </div>
+
+    <!-- Task 11 -->
+    <div class="div">
+        <span><b>Задача 11</b></span><br><br>
+        Введите число: <input type="text" name="number11" id="number11"><br><br>
+        <span>Получите массив, в котором элементы будут являтся делителями введенного числа.</span><br><br> 
+        <input type="submit" onclick="getDivisorsNum()" value="Получить массив"><br><br>
+        Результат: <input type="text" name="result11" id="result11">
+    </div>
+
+   
+    <!-- Task 12 -->
+    <div class="div">
+        <span><b>Задача 12</b></span><br><br>
+        <span>Дана строка: 'I love tangarine!'</span><br><br> 
+        <span>Получите новую строку, в которой каждое слово будет начинаться с большой буквы.</span><br><br> 
+        <input type="submit" onclick="ucfirstStr()" value="Получить новую строку"><br><br>
+        Результат: <input type="text" name="result12" id="result12">
+    </div>
+
+
+    <!-- Task 13 -->
+    <div class="div">
+        <span><b>Задача 13</b></span><br><br>
+        <span>Дана строка: 'var_text_hello'</span><br><br> 
+        <span>Получите новую строку, в которой каждое слово будет начинаться с большой буквы и будут убраны знаки "_".</span><br><br> 
+        <input type="submit" onclick="transformString()" value="Получить новую строку"><br><br>
+        Результат: <input type="text" name="result13" id="result13">
+    </div>
+
+
+    <!-- Task 14 -->
+    <div class="div">
+        <span><b>Задача 14</b></span><br><br>
+        <span>Дан скрытый массив, в котором перечислены разные животные.</span><br><br>
+        Введите название любого животного: <input type="text" name="array" id="array"><br><br>
+        <span>Проверьте, есть ли введенное вами животное в скрытом массиве.</span><br><br> 
+        <input type="submit" onclick="inArrayArr()" value="Проверить"><br><br>
+        Результат: <input type="text" name="result14" id="result14">
+    </div>
+
+
+    <!-- Task 15 -->
+    <div class="div">
+        <span><b>Задача 15</b></span><br><br>
+        <span>Дана строка: '123456'</span><br><br> 
+        <span>Получите новую строку, в которой четные элементы поменяются местами с нечетными.</span><br><br> 
+        <input type="submit" onclick="newStr()" value="Получить новую строку"><br><br>
+        Результат: <input type="text" name="result15" id="result15">
+    </div>
+</body>
+</html>

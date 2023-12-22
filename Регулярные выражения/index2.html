@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Задание 2</title>
+</head>
+<body>
+    <form>
+        <h1>Игра "Угадай число"</h1>
+        <label>
+            <p>Загаданно число от 1 до 20. Попробуйте угадать!</p>
+            <input type="text" name="qw" id="qw" min="1" max="20">
+        </label>
+        <br>
+        <br>
+        <button type="button" onclick="play()">Проверить</button>
+        <p id="result"></p>
+        <br>
+        
+    </form>
+</body>
+<style>
+    body{
+    display: flex;
+}
+form{
+    margin: 0 auto;
+    text-align: center;
+}
+label, input{
+    font-size: 20px;
+}
+h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+button[type="button"]{
+    border: 1px solid black;
+    
+
+    font-size: 16px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 20px;
+    border: 0px solid;
+}
+
+p{
+    font-size: 20px;
+}
+</style>
+<script>
+       var number = Math.floor(Math.random() * 20) + 1;
+   var attempts = 0;
+
+   function play(){
+    var qw = document.getElementById("qw").value;
+    var result = document.getElementById("result");
+    
+    attempts++;
+
+   if(qw < number){
+    result.textContent = "Загаданное число больше введенного!";
+   }
+   else if(qw > number){
+    result.textContent = "Загаданное число меньше введенного!";
+   }
+   else {
+    result.textContent = "Поздравляем! Вы угадали число!";
+    result.textContent += " Количество попыток: " + attempts;
+    }
+    if(qw > 20){
+    result.textContent = "Введенное число больше заданного диапазона!";
+    }
+}
+
+</script>
+</html>

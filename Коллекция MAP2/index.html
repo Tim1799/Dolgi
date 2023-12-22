@@ -1,0 +1,34 @@
+<!DOCTYPE html>   
+<html lang="ru">   
+<head>   
+    <meta charset="UTF-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="style.css"> 
+    <title>Информационный портал</title>   
+     
+</head>   
+<body>   
+    <header>  
+        <button id="compButton" onclick="displayContent('comp')">Компьютер</button>   
+        <button id="servisButton" onclick="displayContent('servis')">Сервис</button>   
+        <button id="complectButton" onclick="displayContent('complect')">Комплектующие</button>   
+    </header>
+        <div id="contentDisplay" class="contentContainer"></div>   
+   
+    <script>    
+        const contentMap = new Map();  
+        contentMap.set('comp', '<div class="categoryItem"><h2>Компьютер</h2><br><p>У нас широкий асортимент ПК, выбирай на свой вкус и цвет.</p><br><img src="пк.jpeg" alt="Компьютер" class="categoryImage"><img src="пк3.jpg" alt="Комплектующие" class="categoryImage"><img src="пк2.jpg" alt="Комплектующие" class="categoryImage"></div>');  
+        contentMap.set('servis', '<div class="categoryItem"><h2>Сервис</h2><br><p>Если что-то случилось с вашим ПК, то можете обратиться к нам.</p><br><img src="сервис3.jpg" alt="Сервис" class="categoryImage"><img src="Сервис 1.png" alt="Комплектующие" class="categoryImage"><img src="сервис2.jpg" alt="Комплектующие" class="categoryImage"></div>');  
+        contentMap.set('complect', '<div class="categoryItem"><h2>Комплектующие</h2><br><p>Мы сможем подобрать для вашего ПК комплектующие.</p><br><img src="compl.jpg" alt="Комплектующие" class="categoryImage"><img src="видюха.jpeg" alt="Комплектующие" class="categoryImage"><img src="проц.jpg" alt="Комплектующие" class="categoryImage"></div>');  
+   
+        function displayContent(category) {   
+            const contentDisplay = document.getElementById('contentDisplay');   
+            if (contentMap.has(category)) {   
+                contentDisplay.innerHTML = contentMap.get(category);   
+            } else {   
+                contentDisplay.textContent = 'Извините, контент для этой категории не доступен.';   
+            }   
+        }   
+    </script>   
+</body>   
+</html>
